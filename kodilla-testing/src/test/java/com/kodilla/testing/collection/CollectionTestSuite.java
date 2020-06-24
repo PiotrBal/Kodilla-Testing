@@ -30,7 +30,6 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
-        //muszę dać konkretne liczby, które później będę mógł sprawdzić w than
         ArrayList<Integer> normalList = new ArrayList<>();
         normalList.add(2);
         normalList.add(3);
