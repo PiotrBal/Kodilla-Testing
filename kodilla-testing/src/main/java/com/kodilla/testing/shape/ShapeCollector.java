@@ -2,36 +2,35 @@ package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
 
-    public class ShapeCollector<circle, triangle, square> {
+    public class ShapeCollector {
         Shape shape;
         ArrayList<Shape> shapeCollectorList = new ArrayList<Shape>();
 
         public ShapeCollector(Shape shape) {
+
             this.shape = shape;
+
+            Shape circle = new Circle("Circle");
+            Shape triangle = new Triangle("Triangle");
+            Shape square = new Square("Square");
+
+            shapeCollectorList.add(circle);
+            shapeCollectorList.add(triangle);
+            shapeCollectorList.add(square);
         }
 
         public Shape getShape() {
             return shape;
         }
 
-            Shape circle = new Circle("Circle");
-            Shape triangle = new Triangle("Triangle");
-            Shape square = new Square("Square");
-
-
-            shapeCollectorList.add(circle);
-            shapeCollectorList.add(triangle);
-            shapeCollectorList.add(square);
-
             public void addFigure(Shape shape){
-                ShapeCollector shape = new ShapeCollector(Shape shape);
                 shapeCollectorList.add(shape);
              }
 
             public boolean removeFigure(Shape shape){
                 boolean result = false;
-                if (shapes.contains(shape)){
-                    shapes.remove(shape);
+                if (shapeCollectorList.contains(shape)){
+                    shapeCollectorList.remove(shape);
                     result = true;
                 }
                 return result;
@@ -48,5 +47,7 @@ import java.util.ArrayList;
             public void showFigures(){
                 System.out.println(shapeCollectorList);
             }
+            public int getFigureQuantity() {
+                return 0;
+            }
         }
-    }

@@ -3,6 +3,9 @@ package com.kodilla.testing.shape;
 import org.junit.*;
 
 public class ShapeCollectorTestSuite {
+    private Shape shape;
+    ShapeCollector shapeCollector = new ShapeCollector(shape);
+
     @BeforeClass
     public static void beforeAllTests() {
         System.out.println("This is the beginning of tests.");
@@ -12,28 +15,28 @@ public class ShapeCollectorTestSuite {
     public static void afterAllTests() {
         System.out.println("All tests are finished.");
     }
+
     @Test
     public void testAddFigure() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
         //When
-        shapeCollector.addFigure(square);
+        shapeCollector.addFigure(new Square("square"));
         //Then
-        Assert.assertEquals(1, shapeCollector.getFigureQuantity);
+        Assert.assertEquals(1, shapeCollector.getFigureQuantity());
     }
     @Test
     public void testRemoveFigure() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
+        Square square = new Square("Square");
         //When
         shapeCollector.removeFigure(square);
         //Then
-        Assert.assertEquals(0, shapeCollector.getFigureQuantity);
+        Assert.assertEquals(0, shapeCollector.getFigureQuantity());
     }
     @Test
     public void testGetFigure() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
+        Square square = new Square("Square");
         shapeCollector.addFigure(square);
         //When
         Shape figure;
@@ -43,11 +46,6 @@ public class ShapeCollectorTestSuite {
     }
     @Test
     public void testShowFigures() {
-        //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
-        //When
-        result = shapeCollector.showFigures();
-        //Then
-        Assert.assertEquals(result);
+        System.out.println(shapeCollector);
     }
 }
