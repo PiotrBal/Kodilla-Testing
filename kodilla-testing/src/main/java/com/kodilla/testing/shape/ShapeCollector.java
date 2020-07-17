@@ -48,6 +48,6 @@ import java.util.ArrayList;
                 System.out.println(shapeCollectorList);
             }
             public int getFigureQuantity() {
-                return 0;
+                return shapeCollectorList.size();
             }
         }
