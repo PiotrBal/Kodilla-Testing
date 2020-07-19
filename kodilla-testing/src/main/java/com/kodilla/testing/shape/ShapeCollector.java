@@ -13,10 +13,6 @@ import java.util.ArrayList;
             Shape circle = new Circle("Circle");
             Shape triangle = new Triangle("Triangle");
             Shape square = new Square("Square");
-
-            shapeCollectorList.add(circle);
-            shapeCollectorList.add(triangle);
-            shapeCollectorList.add(square);
         }
 
         public Shape getShape() {

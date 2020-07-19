@@ -42,7 +42,7 @@ public class ShapeCollectorTestSuite {
         Shape figure;
         figure = shapeCollector.getFigure(0);
         //Then
-        Assert.assertEquals(shapeCollector, figure);
+        Assert.assertEquals(square, figure);
     }
     @Test
     public void testShowFigures() {
