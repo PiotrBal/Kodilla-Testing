@@ -3,6 +3,9 @@ package com.kodilla.testing.forum.statistics;
 import java.util.List;
 
 public class StatisticsCount implements Statistics {
+    List<String> usersNames;
+    List<String> posts;
+    List<String> comments;
     /*  liczbę użytkowników,
         liczbę postów,
         liczbę komentarzy,
@@ -18,7 +21,7 @@ public class StatisticsCount implements Statistics {
     }
 
     @Override
-    public List<String> usersNames() {
+    public int usersNames() {
         return usersNames.size();
     }
 

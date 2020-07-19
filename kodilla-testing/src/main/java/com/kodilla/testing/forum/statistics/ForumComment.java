@@ -1,17 +1,17 @@
 package com.kodilla.testing.forum.statistics;
 
 public class ForumComment {
-    String forumPost;
+    ForumPost forumPost;
     String commentBody;
     String author;
 
-    public ForumComment(String forumPost, String commentBody, String author) {
+    public ForumComment(ForumPost forumPost, String commentBody, String author) {
         this.forumPost = forumPost;
         this.commentBody = commentBody;
         this.author = author;
     }
 
-    public String getForumPost() {
+    public ForumPost getForumPost() {
         return forumPost;
     }
 
