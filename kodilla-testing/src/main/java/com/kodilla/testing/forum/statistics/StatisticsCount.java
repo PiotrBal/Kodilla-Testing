@@ -22,18 +22,6 @@ public class StatisticsCount {
         return commentsNumber;
     }
 
-    public int getAvaragePostPerUser() {
-        return avaragePostPerUser;
-    }
-
-    public int getAvarageCommentPerUser() {
-        return avarageCommentPerUser;
-    }
-
-    public int getAvarageCommentPerPost() {
-        return avarageCommentPerPost;
-    }
-
     void calculateAdvStatistics(Statistics statistics) {
         usersNumber = statistics.usersNames().size();
         postsNumber = statistics.postsCount();
