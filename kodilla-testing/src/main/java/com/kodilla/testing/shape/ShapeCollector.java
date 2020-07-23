@@ -7,7 +7,6 @@ import java.util.ArrayList;
         ArrayList<Shape> shapeCollectorList = new ArrayList<Shape>();
 
         public ShapeCollector(Shape shape) {
-
             this.shape = shape;
 
             Shape circle = new Circle("Circle");

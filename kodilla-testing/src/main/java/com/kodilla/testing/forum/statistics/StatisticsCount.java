@@ -1,37 +1,50 @@
 package com.kodilla.testing.forum.statistics;
 
-import java.util.List;
+public class StatisticsCount {
+    int usersNumber;
+    int postsNumber;
+    int commentsNumber;
+    int avaragePostPerUser;
+    int avarageCommentPerUser;
+    int avarageCommentPerPost;
 
-public class StatisticsCount implements Statistics {
-    List<String> usersNames;
-    List<String> posts;
-    List<String> comments;
-    /*  liczbę użytkowników,
-        liczbę postów,
-        liczbę komentarzy,
-        średnią liczbę postów na użytkownika,
-        średnią liczbę komentarzy na użytkownika,
-        średnią liczbę komentarzy na post.*/
+    public StatisticsCount(){}
+
+    public int getUsersNumber() {
+        return usersNumber;
+    }
+
+    public int getPostsNumber() {
+        return postsNumber;
+    }
+
+    public int getCommentsNumber() {
+        return commentsNumber;
+    }
+
+    public int getAvaragePostPerUser() {
+        return avaragePostPerUser;
+    }
+
+    public int getAvarageCommentPerUser() {
+        return avarageCommentPerUser;
+    }
+
+    public int getAvarageCommentPerPost() {
+        return avarageCommentPerPost;
+    }
+
     void calculateAdvStatistics(Statistics statistics) {
-        //obliczy podane powyżej wartości
-        // i zapamięta je we właściwościach (polach) klasy.
+        usersNumber = statistics.usersNames().size();
+        postsNumber = statistics.postsCount();
+        commentsNumber = statistics.commentsCount();
+        avaragePostPerUser = postsNumber / usersNumber;
+        avarageCommentPerUser = commentsNumber / usersNumber;
+        avarageCommentPerPost = commentsNumber / postsNumber;
     }
+
     void showStatistics() {
-        //wyświetli zapamiętane we właściwościach statystyki
-    }
-
-    @Override
-    public int usersNames() {
-        return usersNames.size();
-    }
-
-    @Override
-    public int postsCount() {
-        return posts.size();
-    }
-
-    @Override
-    public int commentsCount() {
-        return comments.size();
+        System.out.println(usersNumber + postsNumber + commentsNumber +
+                avaragePostPerUser + avarageCommentPerUser + avarageCommentPerPost);
     }
 }
