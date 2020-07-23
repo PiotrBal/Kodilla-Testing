@@ -1,12 +1,12 @@
 package com.kodilla.testing.forum.statistics;
 
 public class StatisticsCount {
-    int usersNumber;
-    int postsNumber;
-    int commentsNumber;
-    int avaragePostPerUser;
-    int avarageCommentPerUser;
-    int avarageCommentPerPost;
+    private int usersNumber;
+    private int postsNumber;
+    private int commentsNumber;
+    private int avaragePostPerUser;
+    private int avarageCommentPerUser;
+    private int avarageCommentPerPost;
 
     public StatisticsCount(){}
 

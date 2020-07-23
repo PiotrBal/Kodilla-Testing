@@ -32,12 +32,12 @@ public class StatisticsCountTestSuite {
         statisticsCountPosts.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(5, statisticsMock.usersNames().size());
-        Assert.assertEquals(10, statisticsMock.postsCount());
-        Assert.assertEquals(20, statisticsMock.commentsCount());
-        Assert.assertEquals(2, statisticsMock.postsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(4, statisticsMock.commentsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(2, statisticsMock.commentsCount() / statisticsMock.postsCount());
+        Assert.assertEquals(5, statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(10, statisticsCountPosts.getPostsNumber());
+        Assert.assertEquals(20, statisticsCountPosts.getCommentsNumber());
+        Assert.assertEquals(2, statisticsCountPosts.getPostsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(4, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(2, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getPostsNumber());
     }
     @Test
     public void testCalculateAdvStatisticsWhenPosts1000 () {
@@ -61,12 +61,12 @@ public class StatisticsCountTestSuite {
         statisticsCountPosts.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(5, statisticsMock.usersNames().size());
-        Assert.assertEquals(1000, statisticsMock.postsCount());
-        Assert.assertEquals(2000, statisticsMock.commentsCount());
-        Assert.assertEquals(200, statisticsMock.postsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(400, statisticsMock.commentsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(2, statisticsMock.commentsCount() / statisticsMock.postsCount());
+        Assert.assertEquals(5, statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(1000, statisticsCountPosts.getPostsNumber());
+        Assert.assertEquals(2000, statisticsCountPosts.getCommentsNumber());
+        Assert.assertEquals(200, statisticsCountPosts.getPostsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(400, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(2, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getPostsNumber());
     }
     @Test
     public void testCalculateAdvStatisticsWhenComments0 () {
@@ -90,12 +90,12 @@ public class StatisticsCountTestSuite {
         statisticsCountPosts.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(5, statisticsMock.usersNames().size());
-        Assert.assertEquals(10, statisticsMock.postsCount());
-        Assert.assertEquals(0, statisticsMock.commentsCount());
-        Assert.assertEquals(2, statisticsMock.postsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(0, statisticsMock.commentsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(0, statisticsMock.commentsCount() / statisticsMock.postsCount());
+        Assert.assertEquals(5, statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(10, statisticsCountPosts.getPostsNumber());
+        Assert.assertEquals(0,  statisticsCountPosts.getCommentsNumber());
+        Assert.assertEquals(2, statisticsCountPosts.getPostsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(0, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(0, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getPostsNumber());
     }
     @Test(expected=java.lang.ArithmeticException.class)
     public void testCalculateAdvStatisticsWhenUsers0 () {
@@ -114,12 +114,12 @@ public class StatisticsCountTestSuite {
         statisticsCountPosts.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0, statisticsMock.usersNames().size());
-        Assert.assertEquals(5, statisticsMock.postsCount());
-        Assert.assertEquals(10, statisticsMock.commentsCount());
-        Assert.assertEquals(0, statisticsMock.postsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(0, statisticsMock.commentsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(2, statisticsMock.commentsCount() / statisticsMock.postsCount());
+        Assert.assertEquals(0, statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(5,  statisticsCountPosts.getPostsNumber());
+        Assert.assertEquals(10, statisticsCountPosts.getCommentsNumber());
+        Assert.assertEquals(0, statisticsCountPosts.getPostsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(0, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(2, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getPostsNumber());
     }
     @Test(expected=java.lang.ArithmeticException.class)
     public void testCalculateAdvStatisticsWhenUsers100() {
@@ -138,12 +138,12 @@ public class StatisticsCountTestSuite {
         statisticsCountPosts.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(100, statisticsMock.usersNames().size());
-        Assert.assertEquals(200, statisticsMock.postsCount());
-        Assert.assertEquals(5000, statisticsMock.commentsCount());
-        Assert.assertEquals(2, statisticsMock.postsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(50, statisticsMock.commentsCount() / statisticsMock.usersNames().size());
-        Assert.assertEquals(25, statisticsMock.commentsCount() / statisticsMock.postsCount());
+        Assert.assertEquals(100, statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(200,  statisticsCountPosts.getPostsNumber());
+        Assert.assertEquals(5000, statisticsCountPosts.getCommentsNumber());
+        Assert.assertEquals(2, statisticsCountPosts.getPostsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(50, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getUsersNumber());
+        Assert.assertEquals(25, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getPostsNumber());
     }
     @Test
     public void testCalculateAdvStatisticsWhenCommentsLessThanPosts(){
@@ -168,12 +168,12 @@ public class StatisticsCountTestSuite {
 
         //Then
         if(statisticsMock.commentsCount() < statisticsMock.postsCount()) {
-            Assert.assertEquals(5, statisticsMock.usersNames().size());
-            Assert.assertEquals(10, statisticsMock.postsCount());
-            Assert.assertEquals(0, statisticsMock.commentsCount());
-            Assert.assertEquals(2, statisticsMock.postsCount() / statisticsMock.usersNames().size());
-            Assert.assertEquals(0, statisticsMock.commentsCount() / statisticsMock.usersNames().size());
-            Assert.assertEquals(0, statisticsMock.commentsCount() / statisticsMock.postsCount());
+            Assert.assertEquals(5, statisticsCountPosts.getUsersNumber());
+            Assert.assertEquals(10, statisticsCountPosts.getPostsNumber());
+            Assert.assertEquals(0,  statisticsCountPosts.getCommentsNumber());
+            Assert.assertEquals(2, statisticsCountPosts.getPostsNumber() / statisticsCountPosts.getUsersNumber());
+            Assert.assertEquals(0, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getUsersNumber());
+            Assert.assertEquals(0, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getPostsNumber());
         }
     }
     @Test
@@ -200,12 +200,12 @@ public class StatisticsCountTestSuite {
 
         //Then
         if (statisticsMock.commentsCount() > statisticsMock.postsCount()) {
-            Assert.assertEquals(5, statisticsMock.usersNames().size());
-            Assert.assertEquals(10, statisticsMock.postsCount());
-            Assert.assertEquals(0, statisticsMock.commentsCount());
-            Assert.assertEquals(2, statisticsMock.postsCount() / statisticsMock.usersNames().size());
-            Assert.assertEquals(0, statisticsMock.commentsCount() / statisticsMock.usersNames().size());
-            Assert.assertEquals(0, statisticsMock.commentsCount() / statisticsMock.postsCount());
+            Assert.assertEquals(5, statisticsCountPosts.getUsersNumber());                                           
+            Assert.assertEquals(10, statisticsCountPosts.getPostsNumber());                                          
+            Assert.assertEquals(0,  statisticsCountPosts.getCommentsNumber());                                       
+            Assert.assertEquals(2, statisticsCountPosts.getPostsNumber() / statisticsCountPosts.getUsersNumber());   
+            Assert.assertEquals(0, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getUsersNumber());
+            Assert.assertEquals(0, statisticsCountPosts.getCommentsNumber() / statisticsCountPosts.getPostsNumber());
         }else{
             System.out.println("Test: 'testCalculateAdvStatisticsWhenCommentsMoreThanPosts()' - FAILED\n " +
                     "because comments less than posts.");
