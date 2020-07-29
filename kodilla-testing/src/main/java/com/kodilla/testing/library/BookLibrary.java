@@ -19,16 +19,7 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-
         List<Book> booksInHandsOf = this.libraryDatabase.listBooksInHandsOf(libraryUser);
-        if (booksInHandsOf.size() == 0)
-            return booksInHandsOf;
-
-        if (booksInHandsOf.size() == 1)
-            return booksInHandsOf;
-
-        if (booksInHandsOf.size() == 5)
-            return booksInHandsOf;
 
         return booksInHandsOf;
     }
